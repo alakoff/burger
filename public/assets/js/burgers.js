@@ -29,20 +29,28 @@ $(function() {
     $(".add-burger").on("click", function(event) {
       event.preventDefault();
 
-      var newBurger = {
-        name: $("#ba").val().trim(),
-        devoured: 0
+      if ($('#ba').val().trim()!=='') {
+
+        var newBurger = {
+          name: $("#ba").val().trim(),
+          devoured: 0
+        }
+  
+        $.ajax("/api/burgers", {
+          type: "POST",
+          data: newBurger
+        }).then(function(){
+            console.log('created new burger');
+            location.reload();
+        })
+  
+      } else {
+
+        alert("Burger name must not be empty!");
+        
       }
 
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-      }).then(function(){
-          console.log('created new burger');
-          location.reload();
-      })
-
-    });
+      });   
 
 });
 

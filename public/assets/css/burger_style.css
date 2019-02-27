@@ -1,7 +1,17 @@
 .NotDevoured {
-    background-color: lightgray;
+    border:solid teal 2px;
 }
 
 .Devoured {
-    background-color: lightgray;
+    border:solid teal 2px;
+}
+
+.jumbotron {
+    background-color: teal;
+    border: solid black 2px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
